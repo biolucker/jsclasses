@@ -126,7 +126,7 @@
           .then((data) => {
             console.log(data)
             const { name, sprites, stats, abilities, types } = data
-            pokemonNameElement.textContent = name
+            pokemonNameElement.textContent = capitalize(name);
             pokemonSprite.src = sprites.front_default
 
             // iterar por los tipos que tiene el pokemon
@@ -144,7 +144,7 @@
             abilities.forEach((element, idx) => {
               const pokemonAbility = document.createElement('a')
               //TODO: acomodar como se setean las habilidades, usar "element" en vez de abilities y pone la primera letra en mayuscula
-              pokemonAbility.textContent = abilities[idx].ability.name
+              pokemonAbility.textContent = capitalize(abilities[idx].ability.name);
               pokemonAbilitiesContainer.appendChild(pokemonAbility)
             })
 
